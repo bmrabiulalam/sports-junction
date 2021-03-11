@@ -9,6 +9,9 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { HeaderLeagueBadgeContext } from '../../App';
+import PlaceIcon from '@material-ui/icons/Place';
+import FlagIcon from '@material-ui/icons/Flag';
+import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,12 +68,12 @@ const LeagueDetails = () => {
 
     return (
         <div className={classes.root} style={{color: '#eff', margin: '4%'}}> 
-            <Grid container spacing={4} style={{borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
-                <Grid item xs={12} sm={6}>
+            <Grid container spacing={4} style={{alignItems: 'center', borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
+                <Grid item xs={12} sm={6} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <h2>{strLeague}</h2>
-                    <p>Founded: {intFormedYear}</p>
-                    <p>Country: {strCountry}</p>
-                    <p>Sports Type: {strSport}</p>
+                    <p><PlaceIcon /> Founded: {intFormedYear}</p>
+                    <p><FlagIcon /> Country: {strCountry}</p>
+                    <p><SportsSoccerIcon /> Sports Type: {strSport}</p>
                     <p>Gender: {strGender}</p>
                 </Grid>
                 <Grid item xs={12} sm={6}>

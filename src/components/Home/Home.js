@@ -26,7 +26,7 @@ const Home = () => {
         const url = 'https://www.thesportsdb.com/api/v1/json/1/all_leagues.php';
         fetch(url)
         .then(res => res.json())
-        .then(data => setLeagues(data.leagues.slice(0, 20)));
+        .then(data => setLeagues(data.leagues.slice(0, 50)));
     }, []);
 
     const classes = useStyles();
@@ -36,7 +36,7 @@ const Home = () => {
             <Grid container spacing={3}>
                 {
                     leagues.map(league => {
-                        return  <Grid item key={league.idLeague} xs={12} sm={6} md={4} lg={3}>
+                        return  <Grid item key={league.idLeague} mx="auto" xs={12} sm={6} md={4} lg={3}>
                                     <League league={league} />
                                 </Grid>
                     })

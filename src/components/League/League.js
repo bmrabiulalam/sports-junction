@@ -9,10 +9,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { HeaderLeagueBadgeContext } from '../../App';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 300,
+        maxWidth: 350,
+        backgroundColor: 'white',
+        borderRadius: 8,
     },
 });
 
@@ -59,30 +63,32 @@ const League = (props) => {
     }, [idLeague]);
 
     return (
-        <Card className={classes.root}>
-            <CardActionArea>
-                <StyledCardMedia
-                    component="img"
-                    alt={strLeague}
-                    height="150"
-                    image={leagueBadge}
-                    title={strLeague}
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {strLeague}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Sports Type: {strSport}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions style={{display: 'flex', justifyContent: 'center'}}>
-                <Link to={`/league/${idLeague}/details`} style={{textDecoration: 'none'}}>
-                    <StyledButton onClick={() => setHeaderLeagueBadge(leagueBadge)}>Explore </StyledButton>
-                </Link>
-            </CardActions>
-        </Card>
+        <Box mx="auto" p={1} className={classes.root}>
+            {/* <Card className={classes.root}> */}
+                <CardActionArea>
+                    <StyledCardMedia
+                        component="img"
+                        alt={strLeague}
+                        height="150"
+                        image={leagueBadge}
+                        title={strLeague}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {strLeague}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            Sports Type: {strSport}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions style={{display: 'flex', justifyContent: 'center'}}>
+                    <Link to={`/league/${idLeague}/details`} style={{textDecoration: 'none'}}>
+                        <StyledButton onClick={() => setHeaderLeagueBadge(leagueBadge)}>Explore<ArrowForwardIcon /></StyledButton>
+                    </Link>
+                </CardActions>
+            {/* </Card> */}
+        </Box>
     );
 };
 
