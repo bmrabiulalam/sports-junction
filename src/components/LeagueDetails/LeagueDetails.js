@@ -9,7 +9,6 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { HeaderLeagueBadgeContext } from '../../App';
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,7 +40,6 @@ const LeagueDetails = () => {
     const [leagueDetails, setLeagueDetails] = useState('');
     const {
         strLeague,
-        strLeagueAlternate,
         strBadge,
         strSport,
         intFormedYear,
@@ -53,7 +51,7 @@ const LeagueDetails = () => {
         strDescriptionEN
     } = leagueDetails;
 
-    const [headerLeagueBadge, setHeaderLeagueBadge] = useContext(HeaderLeagueBadgeContext);
+    const [, setHeaderLeagueBadge] = useContext(HeaderLeagueBadgeContext);
     setHeaderLeagueBadge(strBadge);
 
     useEffect(() => {
@@ -67,9 +65,10 @@ const LeagueDetails = () => {
 
     return (
         <div className={classes.root} style={{color: '#eff', margin: '4%'}}> 
-            <Grid container spacing={3} style={{borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
+            <Grid container spacing={4} style={{borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
                 <Grid item xs={12} sm={6}>
-                    <h2>{strLeagueAlternate}</h2>
+                    <h2>{strLeague}</h2>
+                    <p>Founded: {intFormedYear}</p>
                     <p>Country: {strCountry}</p>
                     <p>Sports Type: {strSport}</p>
                     <p>Gender: {strGender}</p>
@@ -87,16 +86,16 @@ const LeagueDetails = () => {
                     }
                 </Grid>
             </Grid>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} style={{marginTop: '20px', marginBottom: '20px'}}>
                 <Grid item>
                     <p>{strDescriptionEN}</p>
                 </Grid>
             </Grid>
             <Grid container spacing={3} justify="center">
-                <Grid item style={{borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
-                    <a onClick={() => window.location.replace(`${strFacebook}`)}><FacebookIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
-                    <a onClick={() => window.location.replace(`${strYoutube}`)}><YouTubeIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
-                    <a onClick={() => window.location.replace(`${strTwitter}`)}><TwitterIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
+                <Grid item style={{marginBottom: '100px', borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
+                    <a href={`https://${strFacebook}`}><FacebookIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
+                    <a href={`https://${strYoutube}`}><YouTubeIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
+                    <a href={`https://${strTwitter}`}><TwitterIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
                 </Grid>
             </Grid>
         </div>

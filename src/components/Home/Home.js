@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
     const [leagues, setLeagues] = useState([]);
-    const [headerLeagueBadge, setHeaderLeagueBadge] = useContext(HeaderLeagueBadgeContext);
+    const [, setHeaderLeagueBadge] = useContext(HeaderLeagueBadgeContext);
     setHeaderLeagueBadge('');
 
     useEffect(() => {
@@ -33,10 +33,10 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={3} style={{textAlign: 'center'}}>
+            <Grid container spacing={3}>
                 {
                     leagues.map(league => {
-                        return  <Grid item key={league.idLeague} item xs={12} sm={6} md={4} lg={3}>
+                        return  <Grid item key={league.idLeague} xs={12} sm={6} md={4} lg={3}>
                                     <League league={league} />
                                 </Grid>
                     })

@@ -47,9 +47,9 @@ const StyledCardMedia = withStyles({
 const League = (props) => {
     const classes = useStyles();
 
-    const { idLeague, strLeague, strSport, strLeagueAlternate } = props.league;
+    const { idLeague, strLeague, strSport } = props.league;
     const [leagueBadge, setLeagueBadge] = useState('');
-    const [headerLeagueBadge, setHeaderLeagueBadge] = useContext(HeaderLeagueBadgeContext);
+    const [, setHeaderLeagueBadge] = useContext(HeaderLeagueBadgeContext);
 
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${idLeague}`;
