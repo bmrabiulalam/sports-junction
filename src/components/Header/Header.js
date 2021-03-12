@@ -36,17 +36,17 @@ const Header = (props) => {
             <CardActionArea style={{position: 'relative'}}>
                 <CardMedia  className={classes.media}
                     image={bgImg}
-                    title="Contemplative Reptile"
+                    title=""
                 />
                 <CardContent className='overlay'>
                     {
-                        headerLeagueBadge ? 
-                        <StyledCardMedia
-                            component="img"
-                            height="150"
-                            image={headerLeagueBadge}
-                        /> : 
-                        <h1>{defaultInnerItem}</h1>
+                        headerLeagueBadge 
+                        ? <StyledCardMedia
+                                component="img"
+                                height="150"
+                                image={headerLeagueBadge}
+                            /> 
+                        : <h1>{defaultInnerItem}</h1>
                     }
                 </CardContent>
             </CardActionArea>

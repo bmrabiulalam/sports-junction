@@ -15,8 +15,11 @@
     "material-icons-react": "^1.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-infinite-scroll-component": "^6.0.0",
+    "react-infinite-scroll-hook": "^3.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "valid-url": "^1.0.9",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

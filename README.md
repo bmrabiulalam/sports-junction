@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam">
+  <a href="https://github.com/bmrabiulalam/sports-junction">
   </a>
 
   <h3 align="center">SPORTS JUNCTION</h3>
@@ -7,14 +7,14 @@
   <p align="center">
     An awesome sports site to find all the football (soccer) leagues' information worldwide.
     <br />
-    <a href="https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/bmrabiulalam/sports-junction"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://sports-junction.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam/issues">Report Bug</a>
+    <a href="https://github.com/bmrabiulalam/sports-junction/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam/issues">Request Feature</a>
+    <a href="https://github.com/bmrabiulalam/sports-junction/issues">Request Feature</a>
   </p>
 </p>
 
@@ -54,7 +54,8 @@ There are many great codes available on GitHub, however, I tried to give it a sh
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 # Features
-* Find all the Football / Soccer Leagues in the worl
+* Find all the Sports Leagues in the world
+* Infinite Scroll
 * Get details of any specific League
 
 ### Built With
@@ -65,7 +66,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 * [React JS](https://reactjs.org/)
 * [React Router](https://reactrouter.com/)
 * [Material UI](https://material-ui.com/)
-
+* [React Infinite Scroll Component](https://github.com/ankeetmaini/react-infinite-scroll-component)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -83,7 +84,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam.git
+   git clone https://github.com/bmrabiulalam/sports-junction.git
    ```
 2. Go to the project folder
    ```sh
@@ -109,7 +110,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/bmrabiulalam/sports-junction/issues) for a list of proposed features (and known issues).
 
 
 <!-- CONTRIBUTING -->
@@ -129,7 +130,7 @@ Contributions are what make the open source community such an amazing place to b
 
 Muhammad Rabiul Alam - [@bm_rabiulalam](https://twitter.com/bm_rabiulalam) - bmrabiulalam@gmail.com
 
-Project Link: [https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam](https://github.com/Porgramming-Hero-web-course/react-router-bmrabiulalam)
+Project Link: [https://github.com/bmrabiulalam/sports-junction](https://github.com/bmrabiulalam/sports-junction)
 
 
 <!-- ACKNOWLEDGEMENTS -->
@@ -138,6 +139,7 @@ Project Link: [https://github.com/Porgramming-Hero-web-course/react-router-bmrab
 * [React JS](https://reactjs.org/)
 * [React Router](https://reactrouter.com/)
 * [Material UI](https://material-ui.com/)
+* [React Infinite Scroll Component](https://github.com/ankeetmaini/react-infinite-scroll-component)
 * [Netlify](https://www.netlify.com/)
 * [The Sports DB API](https://www.thesportsdb.com/)
 * [VS Code](https://code.visualstudio.com/)

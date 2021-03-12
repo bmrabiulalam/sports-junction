@@ -12,6 +12,8 @@ import { HeaderLeagueBadgeContext } from '../../App';
 import PlaceIcon from '@material-ui/icons/Place';
 import FlagIcon from '@material-ui/icons/Flag';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+import IconLink from '../IconLink/IconLink';
+import LoadingCircle from '../LoadingCircle/LoadingCircle';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,7 +42,7 @@ const StyledCardMedia = withStyles({
 
 const LeagueDetails = () => {
     const { idLeague } = useParams();
-    const [leagueDetails, setLeagueDetails] = useState('');
+    const [leagueDetails, setLeagueDetails] = useState({});
     const {
         strLeague,
         strBadge,
@@ -67,8 +69,9 @@ const LeagueDetails = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root} style={{color: '#eff', margin: '4%'}}> 
-            <Grid container spacing={4} style={{alignItems: 'center', borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
+        Object.keys(leagueDetails).length > 0 ?  
+        <div className={classes.root} style={{color: '#eff', marginInline: '5%', marginTop: '3%'}}> 
+            <Grid container spacing={5} style={{alignItems: 'center', borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
                 <Grid item xs={12} sm={6} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <h2>{strLeague}</h2>
                     <p><PlaceIcon /> Founded: {intFormedYear}</p>
@@ -78,7 +81,6 @@ const LeagueDetails = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     {
-                        strGender && 
                         <StyledCardMedia
                             component="img"
                             alt={`${strGender} league`}
@@ -89,19 +91,20 @@ const LeagueDetails = () => {
                     }
                 </Grid>
             </Grid>
-            <Grid container spacing={3} style={{marginTop: '20px', marginBottom: '20px'}}>
+            <Grid container style={{marginBlock: '60px'}}>
                 <Grid item>
                     <p>{strDescriptionEN}</p>
                 </Grid>
             </Grid>
             <Grid container spacing={3} justify="center">
-                <Grid item style={{marginBottom: '100px', borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
-                    <a href={`https://${strFacebook}`}><FacebookIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
-                    <a href={`https://${strYoutube}`}><YouTubeIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
-                    <a href={`https://${strTwitter}`}><TwitterIcon style={{ margin: '5px', fontSize: '50px', color: 'white' }} /></a>
+                <Grid item style={{marginBottom: '50px', borderRadius: '10px', backgroundColor: '#3bb78f', backgroundImage: 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)'}}>
+                    <IconLink strURL={strFacebook}><FacebookIcon style={{ fontSize: '50px' }} /></IconLink>
+                    <IconLink strURL={strYoutube}><YouTubeIcon style={{ fontSize: '50px' }} /></IconLink>
+                    <IconLink strURL={strTwitter}><TwitterIcon style={{ fontSize: '50px' }} /></IconLink>
                 </Grid>
             </Grid>
         </div>
+        : <LoadingCircle />
     );
 };
 

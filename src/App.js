@@ -10,6 +10,7 @@ import LeagueDetails from './components/LeagueDetails/LeagueDetails';
 import Header from "./components/Header/Header";
 import bgGrid from './images/bg/football-field-0.png';
 import NotFound from './components/NotFound/NotFound';
+import NavBar from './components/NavBar/NavBar';
 
 export const HeaderLeagueBadgeContext = createContext();
 
@@ -18,8 +19,9 @@ function App() {
 
   return (
     <HeaderLeagueBadgeContext.Provider value={[headerLeagueBadge, setHeaderLeagueBadge]}>
-      <div className="App" style={{backgroundImage: `url('${bgGrid}')`}}>
+      <div className="App" style={{backgroundImage: `url('${bgGrid}')`, backgroundAttachment: 'fixed'}}>
         <Router>
+            <NavBar />
             <Header />
             <Switch>
               <Route exact path="/">
