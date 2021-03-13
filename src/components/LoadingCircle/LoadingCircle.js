@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function LoadingCircle() {
 
-  return <CircularProgress  style={{ color: '#fff', marginBlock: '8%'}}/>
+  return <CircularProgress  style={{ color: '#fff', marginBlock: '12%'}}/>
 
 }
 

@@ -67,6 +67,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 * [React Router](https://reactrouter.com/)
 * [Material UI](https://material-ui.com/)
 * [React Infinite Scroll Component](https://github.com/ankeetmaini/react-infinite-scroll-component)
+* [Valid URL](https://github.com/ogt/valid-url)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -139,6 +140,7 @@ Project Link: [https://github.com/bmrabiulalam/sports-junction](https://github.c
 * [React JS](https://reactjs.org/)
 * [React Router](https://reactrouter.com/)
 * [Material UI](https://material-ui.com/)
+* [Valid URL](https://github.com/ogt/valid-url)
 * [React Infinite Scroll Component](https://github.com/ankeetmaini/react-infinite-scroll-component)
 * [Netlify](https://www.netlify.com/)
 * [The Sports DB API](https://www.thesportsdb.com/)

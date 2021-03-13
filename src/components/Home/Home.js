@@ -19,13 +19,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PAGE_NUMBER = 1;
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 24;
 
 const Home = () => {
     const [leagues, setLeagues] = useState([]);
-    // const [loading, setLoading] = useState(false);
-    const [pageNumber, setPageNumber] = useState(PAGE_NUMBER);
+    const [page, setPage] = useState(1);
     const [, setHeaderLeagueBadge] = useContext(HeaderLeagueBadgeContext);
     setHeaderLeagueBadge('');
 
@@ -33,8 +31,10 @@ const Home = () => {
         const url = 'https://www.thesportsdb.com/api/v1/json/1/all_leagues.php';
         fetch(url)
             .then(res => res.json())
-            .then(data => setLeagues([...leagues, ...data.leagues.slice(leagues.length, leagues.length + PAGE_SIZE)]));
-    }, [pageNumber, leagues]);
+            .then(data => setLeagues(oldState => [...oldState, ...data.leagues.slice(oldState.length, oldState.length + PAGE_SIZE)]));
+            // functional update form of setState
+            // https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
+    }, [page]);
 
     const classes = useStyles();
 
@@ -45,15 +45,16 @@ const Home = () => {
                     {
                         <InfiniteScroll
                             dataLength={leagues.length} //This is important field to render the next data
-                            next={() => setPageNumber(pageNumber + 1)}
+                            next={() => setPage(page + 1)}
                             hasMore={true}
-                            loader={<LoadingCircle style={{}} />}
-                            style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}
+                            loader={<LoadingCircle />}
                         >
                             {
-                                leagues.map(league => (
-                                    <League key={league.idLeague} league={league} />
-                                ))
+                                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+                                    {
+                                        leagues.map(league => <League key={league.idLeague} league={league} />)
+                                    }
+                                </div>
                             }
                         </InfiniteScroll>
                     }
